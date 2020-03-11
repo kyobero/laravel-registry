@@ -73,60 +73,8 @@
         </nav>
 
         <main class="py-4">
-
-      
-
-    @auth
-    <div class="container">
-
-      <!-- Flash message/success -->
-      @if(session()->has('success'))
-        <div class="alert alert-success">
-        {{ session()->get('success')}}
-        </div>
-        @endif
-        
-            <div class="row">
-                <div class="col-md-4">
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                        <a >Overview</a>
-                        </li>
-                        <li class="list-group-item">
-                        <a href="#">post</a>
-                        </li>
-                        <li class="list-group-item">
-                        <a href="#">Land Search</a>
-                        </li>
-                        <li class="list-group-item">
-                        <a href="#">Properties</a>
-                        </li>
-                        <li class="list-group-item">
-                        <a href="#">Saved Properties</a>
-                        </li>
-                        <li class="list-group-item">
-                        <a href="#">Title Registration</a>
-                        </li>
-                        <li class="list-group-item">
-                        <a href="#">Resources</a>
-                        </li>
-                    </ul>
-                </div>
-
-
-
-                <div class="col-md-8">
-                @yield('content')
-            </div>
-            </div>
-            </div>
-    @else
-
-    @yield('content')
-
-    @endauth
-
-        </main> 
+            @yield('content')
+        </main>
     </div>
 </body>
 </html>

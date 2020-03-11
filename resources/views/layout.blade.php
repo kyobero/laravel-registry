@@ -64,7 +64,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<li class="mr-lg-4"><a href="contact.html">FAQ's</a></li>
 			</ul>
 			<div class="login-icon mt-2">
-				<a class="user" href="#popup3"><span class="fa fa-user-circle-o" aria-hidden="true"></span></a>
+				<a class="user" href="/login"><span class="fa fa-user-circle-o" aria-hidden="true"></span></a>
 			</div>
 		</nav>
 		<div class="clear"></div>

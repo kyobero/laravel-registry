@@ -59,6 +59,19 @@ Route::get('/verifylands', 'verify_landsController@index');
 Route::post('/verify_lands', 'verify_landsController@store');
 Route::get('/verifylands/create', 'verify_landsController@create');
 Route::get('/verifylands/{Land}', 'verify_landsController@show');
+
+
+//new post+category
+Route::get('/homedash', function () {
+    return view('homedash');
+});
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('welcome', 'HomeController@index')->name('welcome');
+Route::resource('categoryregistration', 'CategoryregistrationsController');
+
+
+
