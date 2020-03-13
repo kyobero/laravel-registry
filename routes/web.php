@@ -72,6 +72,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('welcome', 'HomeController@index')->name('welcome');
 Route::resource('categoryregistration', 'CategoryregistrationsController');
-
+Route::resource('landposts', 'LandpostsController');
 
 

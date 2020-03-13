@@ -85,7 +85,7 @@
         {{ session()->get('success')}}
         </div>
         @endif
-        
+
             <div class="row">
                 <div class="col-md-4">
                     <ul class="list-group">
@@ -93,7 +93,7 @@
                         <a >Overview</a>
                         </li>
                         <li class="list-group-item">
-                        <a href="#">post</a>
+                        <a href="/landposts">post</a>
                         </li>
                         <li class="list-group-item">
                         <a href="#">Land Search</a>
@@ -105,10 +105,13 @@
                         <a href="#">Saved Properties</a>
                         </li>
                         <li class="list-group-item">
-                        <a href="#">Title Registration</a>
+                        <a href="/categoryregistration">Title Registration</a>
                         </li>
                         <li class="list-group-item">
                         <a href="#">Resources</a>
+                        </li>
+                        <li class="list-group-item">
+                        <a href="https://vivianegwu.github.io/homefy/dashboard/index.html#">Proceed to dashboard</a>
                         </li>
                     </ul>
                 </div>
@@ -128,5 +131,10 @@
 
         </main> 
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"  crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"  crossorigin="anonymous"></script>
+    @yield('scripts')
 </body>
 </html>

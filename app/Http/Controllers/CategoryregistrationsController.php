@@ -6,6 +6,8 @@ use App\categoryregistration;
 
 use Illuminate\Http\Request;
 
+use App\Http\Requests\Categoryregistrations\CreateCategoryRegistrationRequest;
+use App\Http\Requests\Categoryregistrations\UpdateCategoryRegistrationRequest;
 class CategoryregistrationsController extends Controller
 {
     /**
@@ -34,11 +36,8 @@ class CategoryregistrationsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateCategoryRegistrationRequest $request)
     {
-        $this->validate($request, [
-            'name'=>'required|unique:categoryregistrations'
-        ]);
 
         $categoryregistration = new categoryregistration();
         categoryregistration::create([
@@ -67,9 +66,9 @@ class CategoryregistrationsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(categoryregistration $categoryregistration)
     {
-        //
+        return view('categoryregistrations\create')->with('categoryregistration', $categoryregistration);
     }
 
     /**
@@ -79,9 +78,15 @@ class CategoryregistrationsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateCategoryRegistrationRequest $request, Categoryregistration $categoryregistration)
     {
-        //
+        $categoryregistration->name=$request->name;
+
+        $categoryregistration->save();
+
+        session()->flash('success', 'category updated successfully.');
+
+        return redirect(route('categoryregistration.index'));
     }
 
     /**
@@ -90,8 +95,12 @@ class CategoryregistrationsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(categoryregistration $categoryregistration)
     {
-        //
+       $categoryregistration->delete();
+
+       session()->flash('success', 'Category deleted successfully.');
+
+       return redirect(route('categoryregistration.index'));
     }
 }
